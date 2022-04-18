@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{TIME MANAGMENT SYSTEM}
+\author{Doddi Abhishek}
+
+
+\begin{document}
+
+\maketitle
+
+
+
+
+
+
+
+\section{indexes}
+Indexes for table `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `projects_deleted_at_index` (`deleted_at`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `roles_deleted_at_index` (`deleted_at`);
+
+--
+-- Indexes for table `time_entries`
+--
+ALTER TABLE `time_entries`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_94_project_project_id_time_entry` (`project_id`),
+  ADD KEY `fk_95_worktype_work_type_id_time_entry` (`work_type_id`),
+  ADD KEY `time_entries_deleted_at_index` (`deleted_at`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_91_role_role_id_user` (`role_id`),
+  ADD KEY `users_deleted_at_index` (`deleted_at`);
+
+--
+-- Indexes for table `user_actions`
+--
+ALTER TABLE `user_actions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_92_user_user_id_user_action` (`user_id`),
+  ADD KEY `user_actions_deleted_at_index` (`deleted_at`);
+
+--
+-- Indexes for table `work_types`
+--
+ALTER TABLE `work_types`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `work_types_deleted_at_index` (`deleted_at`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `time_entries`
+--
+ALTER TABLE `time_entries`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `user_actions`
+--
+ALTER TABLE `user_actions`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `work_types`
+--
+ALTER TABLE `work_types`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `time_entries`
+--
+ALTER TABLE `time_entries`
+  ADD CONSTRAINT `fk_94_project_project_id_time_entry` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`),
+  ADD CONSTRAINT `fk_95_worktype_work_type_id_time_entry` FOREIGN KEY (`work_type_id`) REFERENCES `work_types` (`id`);
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `fk_91_role_role_id_user` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
+
+--
+-- Constraints for table `user_actions`
+--
+ALTER TABLE `user_actions`
+  ADD CONSTRAINT `fk_92_user_user_id_user_action` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+\end{document}

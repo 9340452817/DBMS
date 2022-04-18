@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{TIME MANAGMENT SYSTEM}
+\author{Doddi Abhishek}
+
+
+\begin{document}
+
+\maketitle
+
+
+
+
+
+\section{STRUCTURE OF TEMPORAL CLASS}
+Temporal extension of the standard conventional (non-temporal) model can be in principle created in two ways - by
+defining validity and transaction time. Temporal systems can thus be divided into two basic types:
+Uni-temporal system is based on the time of the validity. The instance of the object in the database thus defines the
+actual object and also the time which may be defined by an interval (start and end time of the interval), or only by the
+beginning. In that case each new instance (record) determines the end of the previous occurrence instance of object
+based on the same object. This way - just the begin time of the period - is used in our developed column-level solution.
+In this case, however, developer should not forget to manage and report states, during which the object is undefined.
+Next table shows the example of the data using the uni-temporal model [5, 10, 11]. The types for interval modelling are
+described in [12].
+\item Table 1. Uni-temporal table (closed-open representation).
+\item  ID BD1 ED1 data
+\item2 Jan 2012 Mar 2012 111
+\item3 Feb 2012 Nov 2012 123
+\item4 Feb 2012 Feb 2013 764
+\item2 Mar 2012 Dec 2012 222
+\item3 Nov 2012 Feb 2013 890
+\end{document}

@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{TIME MANAGMENT SYSTEM}
+\author{Doddi Abhishek}
+
+
+\begin{document}
+
+\maketitle
+
+
+
+
+
+
+\section{source code}
+-- Database: `id_time`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`migration`, `batch`) VALUES
+('2014_10_12_100000_create_password_resets_table', 1),
+('2016_11_10_110258_create_roles_table', 1),
+('2016_11_10_110258_create_users_table', 1),
+('2016_11_10_110259_create_user_actions_table', 1),
+('2016_11_10_110409_create_projects_table', 1),
+('2016_11_10_110420_create_work_types_table', 1),
+('2016_11_10_110630_create_time_entries_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `projects`
+--
+
+CREATE TABLE `projects` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'QuickAdminPanel', '2019-06-11 17:12:52', '2019-06-11 17:12:52', NULL),
+(2, 'Project #1', '2019-06-11 17:12:52', '2019-06-11 17:12:52', NULL),
+(3, 'Project #2', '2019-06-11 17:12:52', '2019-06-11 17:12:52', NULL),
+(4, 'Laravel package #1', '2019-06-11 17:12:52', '2019-06-11 17:12:52', NULL),
+(5, 'Freelance', '2019-06-11 17:12:52', '2019-06-11 17:12:52', NULL),
+(6, 'QuickAdminPanel', '2020-12-31 22:43:58', '2020-12-31 22:43:58', NULL),
+(7, 'Project #1', '2020-12-31 22:43:58', '2020-12-31 22:43:58', NULL),
+(8, 'Project #2', '2020-12-31 22:43:58', '2020-12-31 22:43:58', NULL),
+(9, 'Laravel package #1', '2020-12-31 22:43:58', '2020-12-31 22:43:58', NULL),
+(10, 'Freelance', '2020-12-31 22:43:58', '2020-12-31 22:43:58', NULL),
+(11, 'QuickAdminPanel', '2020-12-31 22:47:47', '2020-12-31 22:47:47', NULL),
+(12, 'Project #1', '2020-12-31 22:47:47', '2020-12-31 22:47:47', NULL),
+(13, 'Project #2', '2020-12-31 22:47:47', '2020-12-31 22:47:47', NULL),
+(14, 'Laravel package #1', '2020-12-31 22:47:47', '2020-12-31 22:47:47', NULL),
+(15, 'Freelance', '2020-12-31 22:47:47', '2020-12-31 22:47:47', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Administrator (can create other users)', '2019-06-11 17:12:52', '2019-06-11 17:12:52', NULL),
+(2, 'Simple user', '2019-06-11 17:12:52', '2019-06-11 17:12:52', NULL),
+(3, 'Administrator (can create other users)', '2020-12-31 22:43:58', '2020-12-31 22:43:58', NULL),
+(4, 'Simple user', '2020-12-31 22:43:58', '2020-12-31 22:43:58', NULL),
+(5, 'Administrator (can create other users)', '2020-12-31 22:47:47', '2020-12-31 22:47:47', NULL),
+(6, 'Simple user', '2020-12-31 22:47:47', '2020-12-31 22:47:47', NULL);
+
+-- --------------------------------------------------------
+
+
+\end{document}

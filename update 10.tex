@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{TIME MANAGMENT SYSTEM}
+\author{Doddi Abhishek}
+
+
+\begin{document}
+
+\maketitle
+
+
+
+
+
+
+
+\section{temporal modal}
+Solution for temporal management should be universal, not only in terms of usability in practice, but also in terms
+of independence from the used database system. Creating new structures at the core level of the database system is
+therefore not appropriate. The requirement of the users is to provide compatibility and easy manipulation. Therefore,
+the triggers, procedures and functions must be declared, the original tables can be transformed to views (if necessary).
+Each database record is defined by the primary key. In most cases, it is the unique identifier (ID), sometimes, we use
+composite primary key. Conventional database tables transformation recommends single attribute primary key in every
+table to create a common temporal table for all tables containing temporal attributes. Thus, ID is suitable; each record can be clearly defined and referenced. Moreover, the ID does not have special denotation and the need for its change
+is irrelevant (e.g. personal identification number contains the birthdate and if the mistake in time of insert occurs, the
+record must be updated).
+
+\section{using statement for data intersecting}
+New record containing information about the change of the temporal column is inserted into the temporal table after
+inserting into conventional table. These operations are provided by insert trigger. New value for attribute ID change is set using the sequence. Value of ID previous change attribute is null, which means, the new data have been inserted
+(for the first time). There is no reference to old value of the attributes, so the ID row and ID column also contain
+NULL value (example for TAB1
+
+\end{document}

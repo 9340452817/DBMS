@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{TIME MANAGMENT SYSTEM}
+\author{Doddi Abhishek}
+
+
+\begin{document}
+
+\maketitle
+
+
+
+
+
+
+\section{using statement for data updating}
+Updating existing data requires saving old data – not the whole row, but only changed temporal attribute values. The
+original table consists of the actual data, so the data manipulation – actual snapshot is easy to get. Historical data
+– the snapshot of the whole database, database table or only object – must be also accessible, but are obtained by
+passing historical conditions defined by insert, delete or update statement. Thus, the update trigger is started before
+update. First of all, the data that are going to be changed, are stored in the table consisting only of the ID of the record
+and the value itself.
+
+\section{using statement for data deleting}
+The task of the trigger starting before delete is to save old data to the table for deleted objects. The information about
+delete is also inserted to the temporal table; ID tab now has the negative value to distinguish whether the data are in
+the main or historical tables. Tables for deleted objects have the same structure as corresponded main tables, therefore
+they are not modelled in diagrams separately
+
+
+
+\end{document}
